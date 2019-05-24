@@ -24,7 +24,7 @@ CREATE TABLE Users (
     FOREIGN KEY (Username) REFERENCES User_Friend(Username)
 );
 
-CREATE TABLE Alblum (
+CREATE TABLE Album (
       Writer VARCHAR(64),
       Release_Date DATE,
       Name VARCHAR(64)
