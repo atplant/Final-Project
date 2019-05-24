@@ -24,7 +24,7 @@ CREATE TABLE Users (
     FOREIGN KEY (Username) REFERENCES User_Friend(Username)
 );
 
-CREATE TABLE Alblum (
+CREATE TABLE Album (
       Writer VARCHAR(64),
       Release_Date DATE,
       Name VARCHAR(64)
@@ -37,17 +37,17 @@ CREATE TABLE Song (
     Length INT,
     Release_Date DATE,
     Performer VARCHAR(64), 
-    FOREIGN KEY (Performer) REFERENCES Alblum(Writer)
+    FOREIGN KEY (Performer) REFERENCES Album(Writer)
 );
 
 CREATE TABLE PlayList (
     Playlist_name VARCHAR(64),
     Arist VARCHAR(64),
-    Alblum VARCHAR(64),
+    Album VARCHAR(64),
     Title VARCHAR(64)
     UNIQUE (Playlist_name)
-    FOREIGN KEY (Artist, Alblum,Title) REFERENCES Alblum(Writer, Name, Tilte)
-);
+    FOREIGN KEY (Artist, Album,Title) REFERENCES Album(Writer, Name, Tilte)
+)
 
 CREATE TABLE User_Friend (
     Username VARCHAR(64),
